@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        registry = "jhonni1000/vprofileapp"
+        registry = "Jhonni1000/vprofileapp"
         registryCredentials = 'dockerhub'
     }
 
@@ -75,7 +75,7 @@ pipeline {
         stage('Build Docker App Image'){
             steps{
                 script{
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    dockerImage = docker.build registry + ":V$BUILD_NUMBER"
                 }
             }
         }
