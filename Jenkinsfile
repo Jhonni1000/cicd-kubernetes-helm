@@ -83,9 +83,10 @@ pipeline {
         stage('Upload Image'){
             steps{
                 script{
-                    docker.withRegistry('', registryCredentials)
-                    docker.Image.push("$BUILD_NUMBER")
-                    docker.Image.push('latest')
+			docker.withRegistry('', registryCredentials){
+			    docker.Image.push("$BUILD_NUMBER")
+                            docker.Image.push('latest')
+			}          
                 }
             }
         }
