@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        registry = "jhonni1000/vprofileapp:V1"
+        registry = "jhonni1000/vprofileapp"
         registryCredentials = 'dockerhub'
     }
 
